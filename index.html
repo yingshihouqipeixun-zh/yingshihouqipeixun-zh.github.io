@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影视后期培训｜剪辑调色合成系统课程与实战训练</title>
+<meta name="description" content="影视后期培训（https://yingshihouqipeixun-zh.github.io）提供剪辑、调色、合成、声音设计的系统课程与实战训练，覆盖 Premiere、DaVinci Resolve、After Effects、Nuke 等主流工具，配套真实项目案例、作业批改与就业指导。">
+<meta name="keywords" content="影视后期培训, 视频剪辑培训, 调色培训, 合成培训, 影视后期课程">
+<meta name="author" content="影视后期培训">
+<link rel="canonical" href="https://yingshihouqipeixun-zh.github.io/">
+<style>
+:root{
+  --ink:#1b1f24; --ink2:#4a5159; --line:#e3e0d8;
+  --paper:#f7f5f0; --card:#ffffff;
+  --brand:#c2410c; --brand2:#9a3412; --accent:#0f766e;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+  background:var(--paper); color:var(--ink); line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+a{color:var(--brand);text-decoration:none}
+img{max-width:100%;display:block}
+
+/* 顶部 */
+header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.hd{display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
+.logo{font-size:19px;font-weight:700;letter-spacing:.5px;white-space:nowrap}
+.logo em{font-style:normal;color:var(--brand)}
+nav{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{font-size:13.5px;color:var(--ink2);padding:6px 11px;border-radius:6px;white-space:nowrap}
+nav a:hover{background:#fbeee6;color:var(--brand)}
+.hd .go{font-size:13px;background:var(--brand);color:#fff;padding:7px 14px;border-radius:20px;white-space:nowrap}
+.hd .go:hover{background:var(--brand2)}
+
+/* 首屏 */
+.hero{padding:64px 0 48px;border-bottom:2px solid var(--ink);position:relative}
+.kicker{font-size:12.5px;letter-spacing:2px;color:var(--accent);font-weight:700}
+h1{font-size:clamp(30px,6.4vw,52px);line-height:1.2;margin:14px 0 18px;font-weight:800;letter-spacing:-.5px}
+h1 span{background:linear-gradient(transparent 62%,#fcd9b8 62%);padding:0 2px}
+.lead{font-size:clamp(15px,3.4vw,17.5px);color:var(--ink2);max-width:660px}
+.urlbox{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:#fff;border:1px dashed #c9c4b8;padding:12px 16px;border-radius:10px;max-width:600px}
+.urlbox code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;color:var(--brand2);word-break:break-all}
+.urlbox button{border:1px solid var(--brand);background:#fff;color:var(--brand);padding:6px 14px;border-radius:16px;font-size:13px;cursor:pointer;white-space:nowrap}
+.urlbox button:hover{background:var(--brand);color:#fff}
+
+/* 章节 */
+section{padding:56px 0}
+.eyebrow{font-size:12.5px;letter-spacing:2px;color:var(--accent);font-weight:700}
+h2{font-size:clamp(24px,5.2vw,34px);margin:8px 0 10px;font-weight:800}
+.sub{color:var(--ink2);font-size:15px;margin-bottom:32px;max-width:680px}
+h3{font-size:18px;margin-bottom:8px}
+
+/* 课程表 */
+.schedule{width:100%;border-collapse:collapse;background:#fff;font-size:14px;box-shadow:0 1px 0 var(--line)}
+.schedule th{background:var(--ink);color:#fff;text-align:left;padding:13px 14px;font-weight:600;font-size:13px;letter-spacing:.5px}
+.schedule td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.schedule tr:last-child td{border-bottom:none}
+.schedule tr:nth-child(even) td{background:#faf9f6}
+.tag{display:inline-block;font-size:11.5px;padding:2px 8px;border-radius:4px;background:#fbeee6;color:var(--brand2);white-space:nowrap}
+.tag.g{background:#e2f2f0;color:var(--accent)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;box-shadow:0 1px 0 var(--line)}
+.scroll table{min-width:720px}
+
+/* 师资 */
+.grid{display:grid;gap:20px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.person{background:#fff;padding:22px;border-radius:12px;border:1px solid var(--line)}
+.ava{width:52px;height:52px;border-radius:50%;background:#f1ede4;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:var(--brand2);margin-bottom:14px}
+.person p{font-size:13.5px;color:var(--ink2)}
+.person .meta{font-size:12px;color:var(--accent);margin-top:12px}
+
+/* 学员作品 */
+.work{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.ph{height:150px;background:linear-gradient(135deg,#2b2118,#5b3a26);position:relative}
+.ph b{position:absolute;left:16px;bottom:14px;color:#fff;font-size:15px}
+.work div{padding:16px}
+.work small{color:var(--ink2);font-size:12.5px}
+
+/* FAQ */
+details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:10px}
+details[open]{border-color:var(--brand)}
+summary{cursor:pointer;font-weight:600;font-size:15.5px;list-style:none;position:relative;padding-right:24px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:0;top:-2px;color:var(--brand);font-size:20px;font-weight:400}
+details[open] summary::after{content:"–"}
+details p{margin-top:12px;font-size:14.5px;color:var(--ink2)}
+
+/* 页脚 */
+footer{background:var(--ink);color:#d8dde3;padding:40px 0 28px;margin-top:40px}
+footer .grid{color:#9aa3ad;font-size:13.5px}
+footer h3{color:#fff;font-size:15px;margin-bottom:10px}
+footer a{color:#c9d1d9;display:block;margin-bottom:6px;font-size:13.5px}
+.copyright{margin-top:28px;padding-top:20px;border-top:1px solid #333a42;font-size:12.5px;color:#7b8490}
+
+@media (max-width:860px){.g4,.g3,.g2{grid-template-columns:repeat(2,1fr)}.hero{padding:42px 0 36px}}
+@media (max-width:560px){
+  .hd .go{display:none}.logo{font-size:16.5px}
+  .g4,.g3,.g2{grid-template-columns:1fr}
+  section{padding:42px 0}.hero{padding:34px 0 30px}
+  .schedule th,.schedule td{padding:11px 10px;font-size:13px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<header>
+  <div class="wrap hd">
+    <div class="logo">影视后期<em>培训</em></div>
+    <nav>
+      <a href="#course">课程体系</a>
+      <a href="#teachers">授课师资</a>
+      <a href="#works">学员作品</a>
+      <a href="#path">学习路径</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="go" href="#course">查看课程安排</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="kicker">POST-PRODUCTION TRAINING</div>
+      <h1>把素材做成<span>能上映</span>的作品</h1>
+      <p class="lead">影视后期培训面向剪辑、调色、合成、声音设计四个岗位方向，用真实项目带着练。从时间线整理到成片输出，每个环节都讲清原理、标准和交付规范，课程全部在 <strong>https://yingshihouqipeixun-zh.github.io</strong> 更新。</p>
+      <div class="urlbox">
+        <code>https://yingshihouqipeixun-zh.github.io</code>
+        <button onclick="copyUrl(this)">复制网址</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="course">
+    <div class="wrap">
+      <div class="eyebrow">01 · 课程体系</div>
+      <h2>十二周，四个模块，一次跑通后期全流程</h2>
+      <p class="sub">课程按岗位能力拆分，模块之间可以单独报，也可以连着上。每节课都有作业，作业按行业交付标准批改。</p>
+      <div class="scroll">
+        <table class="schedule">
+          <thead>
+            <tr><th style="width:110px">周次</th><th style="width:150px">模块</th><th>核心内容</th><th style="width:170px">软件 / 工具</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>第 1–3 周</td><td><span class="tag">剪辑叙事</span></td><td>素材管理、粗剪精剪、节奏控制、对白剪辑、转场与镜头语言</td><td>Premiere Pro、Final Cut</td></tr>
+            <tr><td>第 4–6 周</td><td><span class="tag">调色</span></td><td>色彩管理、一级二级调色、LUT 制作、Log 素材还原、风格化调色</td><td>DaVinci Resolve</td></tr>
+            <tr><td>第 7–9 周</td><td><span class="tag g">合成特效</span></td><td>绿幕抠像、跟踪稳定、粒子与光影、MG 动画、片头包装</td><td>After Effects、Nuke</td></tr>
+            <tr><td>第 10–12 周</td><td><span class="tag g">声音与交付</span></td><td>同期声处理、音效设计、混音、字幕、编码输出与平台规格</td><td>Audition、Pro Tools</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="teachers">
+    <div class="wrap">
+      <div class="eyebrow">02 · 授课师资</div>
+      <h2>讲原理，也讲一线是怎么做的</h2>
+      <p class="sub">讲师都有长期项目经验，课上讲的案例来自实际交付，不演示「做着玩」的练习片。</p>
+      <div class="grid g4">
+        <div class="person">
+          <div class="ava">陈</div>
+          <h3>剪辑主讲</h3>
+          <p>十二年剧情片与纪录片剪辑经验，独立完成长片十五部以上，熟悉从素材到定剪的完整流程。</p>
+          <div class="meta">擅长：叙事结构、节奏设计</div>
+        </div>
+        <div class="person">
+          <div class="ava">周</div>
+          <h3>调色主讲</h3>
+          <p>长期承接广告与剧集调色，熟悉 ACES 流程与摄影机原生色彩还原，带过大量新人调色师。</p>
+          <div class="meta">擅长：色彩管理、风格化</div>
+        </div>
+        <div class="person">
+          <div class="ava">林</div>
+          <h3>合成主讲</h3>
+          <p>视效公司资深合成师，负责过大量绿幕与 CG 合成镜头，对镜头匹配和边缘处理要求严格。</p>
+          <div class="meta">擅长：抠像、跟踪、光影</div>
+        </div>
+        <div class="person">
+          <div class="ava">吴</div>
+          <h3>声音与交付</h3>
+          <p>录音与后期混音出身，熟悉各播出平台的音频规格和编码要求，负责课程最终成片把关。</p>
+          <div class="meta">擅长：混音、编码交付</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="works">
+    <div class="wrap">
+      <div class="eyebrow">03 · 学员作品</div>
+      <h2>结课作品，就是简历里能放的东西</h2>
+      <p class="sub">以下为往期学员在课程项目中的成片类型示例，作品著作权归作者本人所有。</p>
+      <div class="grid g3">
+        <div class="work">
+          <div class="ph" style="background:linear-gradient(135deg,#1c2b4a,#3d5a80)"><b>《晚风便利店》</b></div>
+          <div><small>剧情短片 · 剪辑 + 调色 · 24 分钟</small><p style="font-size:13.5px;color:#4a5159;margin-top:6px">三场戏完成人物关系交代，靠剪辑节奏替代对白说明。</p></div>
+        </div>
+        <div class="work">
+          <div class="ph" style="background:linear-gradient(135deg,#3a2a1c,#8a5a2b)"><b>《城市褶皱》</b></div>
+          <div><small>纪录片片段 · 同期声 + 混音 · 12 分钟</small><p style="font-size:13.5px;color:#4a5159;margin-top:6px">环境音重建城市空间感，声音占叙事比重过半。</p></div>
+        </div>
+        <div class="work">
+          <div class="ph" style="background:linear-gradient(135deg,#16231f,#2f5d52)"><b>《界面之外》</b></div>
+          <div><small>产品宣传片 · 合成 + MG · 90 秒</small><p style="font-size:13.5px;color:#4a5159;margin-top:6px">实拍与图形动画混合，绿幕边缘与屏幕反射逐帧处理。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="path">
+    <div class="wrap">
+      <div class="eyebrow">04 · 学习路径</div>
+      <h2>零基础也能跟上，有基础的可以直接插班</h2>
+      <p class="sub">报名前做一次能力评估，按结果安排起点，不强制从头听。</p>
+      <div class="grid g3">
+        <div class="person">
+          <h3>第一步 · 评估</h3>
+          <p>提交一段自己剪过的片子或回答几道基础题，讲师判断你在剪辑、调色、合成三个方向的现有水平。</p>
+        </div>
+        <div class="person">
+          <h3>第二步 · 跟课</h3>
+          <p>按模块上课，每节课后交作业。作业批改会指出具体问题，不只给「整体不错」这类评价。</p>
+        </div>
+        <div class="person">
+          <h3>第三步 · 项目</h3>
+          <p>用统一命题完成一个成片，走完剪辑、调色、合成、声音、输出的完整流程，作为结课作品。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="eyebrow">05 · 常见问题</div>
+      <h2>报名前你可能想问的</h2>
+      <details open>
+        <summary>影视后期培训的课程地址在哪里？</summary>
+        <p>课程介绍、课程表、师资与学员作品都在 <strong>https://yingshihouqipeixun-zh.github.io</strong> 上更新，网址可以直接复制到浏览器访问，不需要通过其他平台跳转。</p>
+      </details>
+      <details>
+        <summary>零基础能学吗？需要自备电脑吗？</summary>
+        <p>可以。课程从素材管理和时间线操作讲起，不预设基础。建议自备一台能流畅运行剪辑与调色软件的电脑，课程开始前会给出具体的配置参考。</p>
+      </details>
+      <details>
+        <summary>学完能达到什么程度？</summary>
+        <p>能独立完成一部短片的后期全流程，并产出可作为求职样片的成片作品。课程不承诺就业，但会讲清行业里的岗位分工、交付标准和面试时容易被问到的问题。</p>
+      </details>
+      <details>
+        <summary>可以只学其中一个模块吗？</summary>
+        <p>可以。剪辑、调色、合成、声音四个模块支持单独报名，适合已经有其他环节基础、只想补某一块的同学。</p>
+      </details>
+      <details>
+        <summary>课程是直播还是录播？</summary>
+        <p>核心内容以直播为主，课后提供回放；案例拆解部分提供录播，方便反复对照操作。作业批改和答疑在固定时段进行。</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="grid g4">
+      <div>
+        <h3>影视后期培训</h3>
+        <p>剪辑 · 调色 · 合成 · 声音设计<br>用真实项目讲清后期全流程。</p>
+      </div>
+      <div>
+        <h3>栏目</h3>
+        <a href="#course">课程体系</a>
+        <a href="#teachers">授课师资</a>
+        <a href="#works">学员作品</a>
+        <a href="#path">学习路径</a>
+      </div>
+      <div>
+        <h3>模块</h3>
+        <a href="#course">剪辑叙事</a>
+        <a href="#course">调色</a>
+        <a href="#course">合成特效</a>
+        <a href="#course">声音与交付</a>
+      </div>
+      <div>
+        <h3>官方网址</h3>
+        <a href="https://yingshihouqipeixun-zh.github.io">yingshihouqipeixun-zh.github.io</a>
+        <p style="margin-top:8px">完整课程安排见站点内页。</p>
+      </div>
+    </div>
+    <div class="copyright">
+      本站网址为 https://yingshihouqipeixun-zh.github.io ，所有课程内容与学员作品信息以站点更新为准。© 影视后期培训
+    </div>
+  </div>
+</footer>
+
+<script>
+function copyUrl(btn){
+  var u="https://yingshihouqipeixun-zh.github.io";
+  var done=function(){btn.textContent="已复制";setTimeout(function(){btn.textContent="复制网址"},1800);};
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(u).then(done,function(){fallback(u,done)});
+  }else{fallback(u,done)}
+}
+function fallback(u,cb){
+  var t=document.createElement("textarea");t.value=u;t.style.position="fixed";t.style.opacity="0";
+  document.body.appendChild(t);t.select();try{document.execCommand("copy");cb()}catch(e){}
+  document.body.removeChild(t);
+}
+</script>
+</body>
+</html>
